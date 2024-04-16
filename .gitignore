@@ -35,3 +35,31 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### secure ###
+src/main/resources/application.properties
+
+############################################################
+### React ###
+# dependencies
+src/main/view/node_modules
+src/main/view/.pnp
+src/main/view/.pnp.js
+
+# testing
+src/main/view/coverage
+
+# production
+src/main/view/build
+
+# misc
+src/main/view/.DS_Store
+src/main/view/.env
+src/main/view/.env.local
+src/main/view/.env.development.local
+src/main/view/.env.test.local
+src/main/view/.env.production.local
+
+src/main/view/npm-debug.log*
+src/main/view/yarn-debug.log*
+src/main/view/yarn-error.log*
