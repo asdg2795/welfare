@@ -38,7 +38,7 @@ function App() {
         = useState([] as serviceList[])
 
     useEffect(() => {
-        axios.get("http://localhost:9000/test",{
+        axios.get(`${process.env.REACT_APP_REST_API as string}/test`,{
             headers:{
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
@@ -68,7 +68,6 @@ function App() {
             {
                 response.map((v,i)=>{
                     return(
-                        <>
                         <div key={v.servId + i}>
                             {/*<span>{v.servId}</span>*/}
                             <span>{v.servNm}</span>
@@ -79,8 +78,6 @@ function App() {
                             <a href={v.servDtlLink}>바로가기</a>
                             <span>{v.svcfrstRegTs.toString()}</span>
                         </div>
-                        </>
-
                     )
                 })
             }
