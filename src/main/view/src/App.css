@@ -1,22 +1,171 @@
-.test{
+/* 헤더 */
+.main>.header{
     display: flex;
-    flex-direction: column;
-}
-.test>div{
-    height: 3rem;
-    display:grid;
-    grid-template-columns:1.5fr 1fr 1fr 6fr 1fr 1fr;
-}
-.test>div:first-child{
-    text-align: center;
-}
-.test>div>span:not(:nth-child(4)){
-    text-align: center;
-}
-.test>div:nth-child(2n){
-    background-color: aliceblue;
 }
 
-.test>div:nth-child(10n+1){
-    border-bottom: 2px solid red;
+.main>.header>.header-section{
+    flex: 1;
+    border: 1px solid white;
+}
+
+.main>.header>.hs1{
+    background-color: lightblue;
+    border-bottom-color: white;
+
+}
+
+.main>.header>.hs1>.fun-Link{
+    text-decoration: none;
+}
+
+.main>.header>.hs1>.fun-Link>h1 {
+    color: black;
+}
+.main>.header>.hs2{
+    background-color: white;
+    border-bottom-color: lightblue;
+}
+
+/* 섹션1 */
+.main>.top-section{
+    display: flex;
+    height: 65vh;
+
+}
+
+.main>.top-section>.section1>h2{
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+}
+
+.main>.top-section>.section2>h2{
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+
+}
+.main>.top-section>.section1>.fun-Link>img{
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+}
+
+.main>.top-section>.section2>.fun-Link>img{
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+}
+
+.main>.top-section>.section{
+    flex: 1;
+    border: 1px solid white;
+}
+
+.main>.top-section>.section1{
+    background-color: lightblue;
+    border-top-color: white;
+    border-bottom: none;
+}
+
+.main>.top-section>.section2{
+    background-color: white;
+    border-top-color: lightblue;
+    border-bottom: none;
+}
+
+/* 섹션2 */
+.main>.search-section{
+    background-color: #BCBCBC;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+}
+
+
+/* 검색창 */
+.main>.search-section>.search-bar{
+    background-color: white;
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid #0066FF;
+    margin: 0 auto;
+    display: block;
+    width: 440px;
+    height: 40px;
+}
+
+.main>.search-section>.search-bar>input{
+    border: none;
+    outline: none;
+    border-radius: 10px 10px 10px 10px;
+    margin-top: 7px;
+    width:390px;
+    font-size: 15px;
+}
+
+.main>.search-section>.search-bar>button{
+    border: none;
+    outline: none;
+    background-color: white;
+    float:right;
+    font-size: 20px;
+    margin-right:5px;
+    margin-top:2px;
+}
+
+/* 배너 */
+.main>.banner-section{
+    background-color: #D1CDCD;
+    height: 500px;
+}
+
+.main>.banner-section>.banner{
+    position: relative;
+    width: 600px;
+    height: 350px;
+    margin: 0 auto;
+}
+
+.main>.banner-section>.banner>img{
+    margin-top: 70px;
+}
+
+.main>.banner-section>.banner>.left-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -6%;
+    width: 70px;
+    height: 70px;
+    background-image: url("./img/free-icon-arrow-circle-8019993.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 70px;
+}
+
+.main>.banner-section>.banner>.right-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) scaleX(-1);
+    right: -6%;
+    width: 70px;
+    height: 70px;
+    background-image: url("./img/free-icon-arrow-circle-8019993.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 70px;
+}
+
+/* 푸터 */
+.main>.footer{
+    background-color: white;
+    height: 130px;
 }

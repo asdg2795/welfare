@@ -11,7 +11,9 @@ enum SearchKeyCode { /* 검색 분류 */
 	Co='002', /* 내용 */
 	TC='003', /* 제목+내용 */
 }
+
 enum LifeArray { /* 생애주기 */
+	DEFAULT_VALUE ='000',
 	INFANT='001' /* 영유아 */,
 	CHILD='002' /* 아동 */,
 	TEENAGER='003' /* 청소년 */,
@@ -20,6 +22,7 @@ enum LifeArray { /* 생애주기 */
 	OLD='006' /* 노년 */,
 	PREGNANT ='007' /* 임신/출산 */,
 }
+
 enum CharacteristicTargetArray { /* 대상특성 */
 	GENERAL = '001' /* 일반 */,
 	DISABLED = '002' /* 장애인 */,
@@ -87,6 +90,7 @@ enum DisabilitySeverity { /* 장애정도 */
 	UNABLE_TO_CONFIRM = '99' /* 확인불가 */,
 }
 enum TargetIndividualArray{ /* 가구상황 */
+	DEFAULT_VALUE='000',
 	MULTI_CULTURAL='010' /* 다문화 / 탈북민 */,
 	MULTI_CHILD='020' /* 다자녀 */,
 	WAR_HERO='030' /* 보훈 대상자 */,

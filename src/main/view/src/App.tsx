@@ -1,99 +1,72 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
-import {CallType, NationalRequestParams, NationalResponseParams, serviceList, NationalURL, SearchKeyCode} from "./Types/NationalGo";
-import axios from "axios";
+import { Link } from 'react-router-dom';
+import banner from './img/banner.png';
+import content1 from './img/001.png';
+import content2 from './img/002.png';
+
 
 function App() {
-    const requestParams:NationalRequestParams = {
-        // serviceKey:process.env.REACT_APP_ENCODED_APIKEY as string,
-        callTp:CallType.List,
-        pageNo: 1,
-        numOfRows: 10,
-        srchKeyCode: SearchKeyCode.Ti,
-    }
-    const reqQueryString="?" + Object.entries(requestParams)
-        .map(([key, value])=> key&&value?(key+"="+value):'').join("&")
-    function axiosAPIAccess(){
-        // console.log(reqQueryString);
-        axios({
-            url:NationalURL+reqQueryString+"&serviceKey="+process.env.REACT_APP_ENCODED_APIKEY as string,
-            headers:{
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            method:"GET",
-            // data:requestParams
-        }).then((res) => {
-            console.log(res);
-            console.log(res.config.data);
-            console.log(res.data);
-        }).catch((err) => {
-            console.log(err);
-        })
+
+    const [inputText, setInputText] = useState('');
+
+    function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+        setInputText(event.target.value);
     }
 
-    const [request, setRequest]
-        = useState(requestParams as NationalRequestParams);
-    const [response, setResponse]
-        = useState([] as serviceList[])
+    function handleSearch() {
+        console.log("검색어:", inputText);
+    }
 
-    useEffect(() => {
-        axios.get(`${process.env.REACT_APP_REST_API as string}/test`,{
-            headers:{
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            params:request
-        }).then((res)=>{
-            console.log(res.data);
-            setResponse([...response, ...(res.data.wantedList.servList as serviceList[])]);
-        }).catch((err)=>{
-            console.log(err);
-        })
-    }, [request]);
+        return (
+            <div className="main">
+                <div className="header">
+                    <div className="header-section hs1">
+                        <Link to="/" className="fun-Link">
+                            <h1>LOGO</h1>
+                        </Link>
+                    </div>
+                    <div className="header-section hs2"></div>
 
-    return (
-        <div className={'App'}>
-            <h2>Test</h2>
-            <button onClick={axiosAPIAccess}>AXIOS</button>
-            <section className={'test'}>
-                <div>
-                    <span>서비스명</span>
-                    <span>소관부처명</span>
-                    <span>소관조직명</span>
-                    <span>요약</span>
-                    <span>상세링크</span>
-                    <span>등록일</span>
                 </div>
-            {
-                response.map((v,i)=>{
-                    return(
-                        <div key={v.servId + i}>
-                            {/*<span>{v.servId}</span>*/}
-                            <span>{v.servNm}</span>
-                            <span>{v.jurMnofNm}</span>
-                            <span>{v.jurOrgNm}</span>
-                            {/*<span>{v.inqNum}</span>*/}
-                            <span>{v.servDgst}</span>
-                            <a href={v.servDtlLink}>바로가기</a>
-                            <span>{v.svcfrstRegTs.toString()}</span>
-                        </div>
-                    )
-                })
-            }
-            </section>
-            <button onClick={()=>{
-                /*request.pageNo = request.pageNo+1;
-                setRequest({...request})*/
-                setRequest((prevState)=>{
-                    return{
-                        ...prevState,
-                        pageNo:prevState.pageNo+1
-                    }
-                });
-            }}>더보기{request.pageNo}</button>
-        </div>
-    )
-}
+                <div className="top-section">
+                    <div className="section section1">
+                        <Link to="/ServFunc" className="fun-Link">
+                            <img src={content1} alt="복지서비스"/>
+                        </Link>
+                        <h2>복지 서비스를 <br/>소개합니다!</h2>
+                    </div>
+                    <div className="section section2">
+                        <Link to="" className="fun-Link">
+                            <img src={content2} alt="복지시설"/>
+                        </Link>
+                        <h2>복지 시설을 <br/>소개합니다!</h2>
+                    </div>
+                </div>
 
+                <div className="search-section">
+                    <div className="search-bar">
+                        <input
+                            type="text"
+                            value={inputText}
+                            onChange={handleInputChange}
+                            placeholder="전체 검색 | 검색어를 입력하세요."
+                        />
+                        <button onClick={handleSearch}>🔍</button>
+                    </div>
+                </div>
+
+                <div className="banner-section">
+                    <div className="banner">
+                        <img src={banner} alt="배너"/>
+                        <div className="left-arrow"></div>
+                        <div className="right-arrow"></div>
+                    </div>
+                </div>
+
+                <div className="footer"></div>
+            </div>
+        );
+    }
 export default App;
+

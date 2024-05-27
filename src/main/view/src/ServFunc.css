@@ -1,0 +1,149 @@
+.main>.logo>.fun-Link{
+    text-decoration: none;
+}
+.main>.logo>.fun-Link>h1{
+    color: black;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 80px;
+}
+
+/* 검색창 */
+.main>.search-bar{
+    background-color: white;
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid #0066FF;
+    margin: 0 auto;
+    margin-top: 30px;
+    display: block;
+    width: 440px;
+    height: 40px;
+}
+
+.main>.search-bar>input{
+    border: none;
+    outline: none;
+    border-radius: 10px 10px 10px 10px;
+    margin-top: 7px;
+    width:390px;
+    font-size: 15px;
+}
+
+.main>.search-bar>button{
+    border: none;
+    outline: none;
+    background-color: white;
+    float:right;
+    font-size: 20px;
+    margin-right:5px;
+    margin-top:2px;
+}
+
+.main>.middle-box{
+    display: flex;
+    height: 5vh;
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 80px;
+    background-color: #F7F4F4;
+    text-align: center;
+    font-size: 25px;
+}
+
+.main>.middle-box>.section{
+    flex: 1;
+    border: 1px solid #0066FF;
+}
+
+.main>.middle-box>.box-section1{
+    border-right: none;
+}
+
+.main>.middle-box>.box-section2{
+    flex: 1;
+    border: 1px solid #0066FF;
+    border-left: none;
+}
+
+.main>.main-box{
+    display: flex;
+    height: 50vh;
+    width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main>.main-box>.section{
+    flex: 1;
+    border: 1px solid #0066FF;
+    border-top: none;
+}
+
+.main>.main-box>.section>ul>li{
+    line-height: 65px;
+    user-select: text;
+    font-weight: bold;
+    list-style-type: none;
+}
+
+.main>.main-box>.main-section1{
+    border-right: none;
+}
+
+.main>.search-btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.main>.search-btn>button{
+    width:700px;
+    font-size: 20px;
+}
+
+.main>.middle-lane{
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.main>.middle-lane>.middle-lane-item>.search-content{
+    border: 1px solid black;
+    border-radius: 10px 10px 10px 10px;
+    padding: 20px; /* 내부 여백 설정 */
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.main>.middle-lane>.middle-lane-item>.detail-content{
+    border: 1px solid black;
+    border-radius: 10px 10px 10px 10px;
+    padding: 20px; /* 내부 여백 설정 */
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.main>.middle-lane>.middle-lane-item>.detail-content>.detail-name{
+    font-weight: bold;
+}
+
+.main>.middle-lane>.middle-lane-item>.search-content>.main-name{
+    font-weight: bold;
+}
+
+.main>.middle-lane>.middle-lane-item>.search-content>.main-btn {
+    float: right;
+}
+
+.main>.middle-lane>.middle-lane-item>.detail-content>.main-btn {
+    float: right;
+    margin-bottom: 20px;
+}
+
+.main>.footer{
+    background-color: white;
+    height: 130px;
+}
+
+.selected{
+    color:blue;
+}
